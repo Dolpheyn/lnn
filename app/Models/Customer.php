@@ -22,6 +22,10 @@ class Customer extends Model {
   public function addresses() {
     return $this->hasMany(Address::class, 'customerId');
   }
+
+  public function orders() {
+    return $this->hasMany(Order::class, 'customerId');
+  }
 }
 
 ?>
