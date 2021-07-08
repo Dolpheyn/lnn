@@ -18,11 +18,12 @@ class CreateOrdersTable extends Migration
             $table->enum('status', [
               'Preparing',
               'Cooking',
+              'ReadyForPickup',
               'OutForDelivery',
               'Completed'
             ]);
-            $table->string('customerId');
-            $table->string('delivererId');
+            $table->string('customerId')->default('');
+            $table->string('delivererId')->default('');
             $table->timestamps();
         });
     }
