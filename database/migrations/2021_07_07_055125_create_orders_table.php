@@ -15,8 +15,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
+            $table->enum('status', [
+              'Preparing',
+              'Cooking',
+              'OutForDelivery',
+              'Completed'
+            ]);
             $table->string('customerId');
+            $table->string('delivererId');
             $table->timestamps();
         });
     }
