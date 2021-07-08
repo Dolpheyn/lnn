@@ -17,7 +17,7 @@ class Customer extends JsonResource
       return [
         'id' => $this->id,
         'name' => $this->name,
-        'phone' => $this->phone,
+        'phoneNumber' => $this->phoneNumber,
         'email' => $this->email,
         'address' => $this->address,
         'created_at' => $this->created_at->format('d/m/Y'),
