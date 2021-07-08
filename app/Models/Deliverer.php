@@ -19,6 +19,10 @@ class Deliverer extends Model {
       'email',
       'claimableCommission',
   ];
+
+  public function orders() {
+    return $this->hasMany(Order::class, 'delivererId');
+  }
 }
 
 ?>
