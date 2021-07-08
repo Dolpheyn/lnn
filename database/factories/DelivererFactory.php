@@ -24,7 +24,8 @@ class DelivererFactory extends Factory
       return [
         'name' => $this->faker->name(),
         'email' => $this->faker->unique()->safeEmail(),
-        'phoneNumber' => $this->faker->unique()->phoneNumber()
+        'phoneNumber' => $this->faker->unique()->phoneNumber(),
+        'claimableCommission' => 0,
       ];
     }
 }
