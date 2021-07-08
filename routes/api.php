@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CustomerController;
+use App\Http\Controllers\API\DelivererController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 Route::resource('customers', CustomerController::class);
+Route::resource('deliverers', DelivererController::class);
 
 /**
   * For routes that require authentication
