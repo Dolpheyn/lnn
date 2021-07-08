@@ -16,6 +16,14 @@ class Order extends Model {
   protected $fillable = [
       'status',
   ];
+
+  function customer() {
+    return $this->belongsTo(Customer::class, 'customerId');
+  }
+
+  function deliverer() {
+    return $this->belongsTo(Deliverer::class, 'delivererId');
+  }
 }
 
 ?>
