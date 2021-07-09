@@ -25,4 +25,16 @@ class SalesReport extends Model
   function generatedBy() {
     return $this->belongsTo(Admin::class, 'adminId');
   }
+
+  function orders() {
+    return $this->hasManyThrough(
+      'App\Models\Order', // the related model
+      'App\Models\SalesReportOrder', // the pivot model
+
+      'salesReportId', // current model id in pivot table
+      'id', // related model id attr
+      'id', // current model id attr
+      'orderId' // related model id in pivot table
+    );
+  }
 }
