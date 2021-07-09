@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         OrderSeeder::class,
         SalesReportSeeder::class,
         FoodCategorySeeder::class,
+        Food::class,
       ]);
     }
 }
