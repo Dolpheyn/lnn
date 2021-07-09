@@ -24,7 +24,7 @@ class PaymentFactory extends Factory
         return [
           'paid' => $this->faker->boolean(),
           'total' => $this->faker->randomDigit(),
-          'paymentMethod' => $this->faker->randomElement(['FPX', 'COD', '']),
+          'paymentMethod' => $this->faker->randomElement(['FPX', 'COD']),
         ];
     }
 }
