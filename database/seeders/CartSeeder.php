@@ -33,7 +33,7 @@ class CartSeeder extends Seeder
             CartFood::create([
               'cartId' => $cart->id,
               'foodId' => $cartFood->id,
-            ])
+            ]);
           }
         }
     }
