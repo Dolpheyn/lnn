@@ -27,6 +27,7 @@ class OrderFoodSeeder extends Seeder
             OrderFood::create([
               'orderId' => $order->id,
               'foodId' => $orderFood->id,
+              'quantity' => 1,
             ]);
           }
         }

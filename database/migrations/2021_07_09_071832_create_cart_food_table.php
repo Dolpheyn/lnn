@@ -16,6 +16,7 @@ class CreateCartFoodTable extends Migration
         Schema::create('cart_food', function (Blueprint $table) {
             $table->string('cartId');
             $table->string('foodId');
+            $table->integer('quantity');
             $table->unique(['foodId', 'cartId']);
             $table->timestamps();
         });

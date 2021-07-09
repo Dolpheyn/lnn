@@ -16,6 +16,7 @@ class CreateOrderFoodTable extends Migration
         Schema::create('order_food', function (Blueprint $table) {
             $table->string('foodId');
             $table->string('orderId');
+            $table->integer('quantity');
             $table->unique(['orderId', 'foodId']);
             $table->timestamps();
         });
