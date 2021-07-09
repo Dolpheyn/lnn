@@ -37,4 +37,15 @@ class Food extends Model
       'orderId', // related model id in pivot table
     );
   }
+
+  function carts() {
+    return $this->hasManyThrough(
+      'App\Models\Cart', // the related model
+      'App\Models\CartFood', // the pivot model
+
+      'foodId', // current model id in pivot table
+      'id', // related model id attr
+      'id', // current model id attr
+      'cartId', // related model id in pivot table
+    );
 }
