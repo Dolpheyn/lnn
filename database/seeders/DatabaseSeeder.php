@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         CustomerSeeder::class,
         DelivererSeeder::class,
         OrderSeeder::class,
+        SalesReportSeeder::class,
+        FoodCategorySeeder::class,
       ]);
     }
 }
