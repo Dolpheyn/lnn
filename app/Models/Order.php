@@ -24,6 +24,18 @@ class Order extends Model {
   function deliverer() {
     return $this->belongsTo(Deliverer::class, 'delivererId');
   }
+
+  function foods() {
+    return $this->hasManyThrough(
+      'App\Models\Food', // the related model
+      'App\Models\OrderFood', // the pivot model
+
+      'orderId', // current model id in pivot table
+      'id', // related model id attr
+      'id', // current model id attr
+      'foodId' // related model id in pivot table
+    );
+  }
 }
 
 ?>
