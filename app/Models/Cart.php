@@ -19,19 +19,23 @@ class Cart extends Model
       'deliveryFee',
   ];
 
+  public function getSubTotalAttribute() {
+    $foods = $this->foods;
+    $total = 0;
+
+    foreach($foods as $food) {
+
+    }
+  }
+
   public function customer() {
     return $this->belongsTo(Customer::class, 'customerId');
   }
 
   function foods() {
-    return $this->hasManyThrough(
-      'App\Models\Food', // the related model
-      'App\Models\CartFood', // the pivot model
-
-      'cartId', // current model id in pivot table
-      'id', // related model id attr
-      'id', // current model id attr
-      'foodId' // related model id in pivot table
-    );
+    return $this
+            ->belongsToMany(Food::class, 'cart_food', 'cartId', 'foodId')
+            ->withPivot('quantity')
+            ->withTimestamps();
   }
 }

@@ -30,15 +30,10 @@ class Order extends Model {
   }
 
   function foods() {
-    return $this->hasManyThrough(
-      'App\Models\Food', // the related model
-      'App\Models\OrderFood', // the pivot model
-
-      'orderId', // current model id in pivot table
-      'id', // related model id attr
-      'id', // current model id attr
-      'foodId' // related model id in pivot table
-    );
+    return $this
+            ->belongsToMany(Food::class, 'order_food', 'orderId', 'foodId')
+            ->withPivot('quantity')
+            ->withTimestamps();
   }
 }
 
