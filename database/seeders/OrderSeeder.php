@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Customer;
 use App\Models\Deliverer;
 use App\Models\Order;
+use App\Models\Payment;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Sequence;
@@ -31,6 +32,8 @@ class OrderSeeder extends Seeder
                       ))
                       ->create();
 
+
+
       $ordersShouldHaveDeliverer = $orders
           ->whereIn('status', ['OutForDelivery', 'Completed']);
       $deliverers = Deliverer::all();
@@ -43,6 +46,8 @@ class OrderSeeder extends Seeder
       foreach ($orders as $order) {
         $customer = $customers->random();
         $customer->orders()->save($order);
+
+        Payment::factory()->for($order)->create();
       }
     }
 }
