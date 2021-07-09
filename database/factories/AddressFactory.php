@@ -23,6 +23,7 @@ class AddressFactory extends Factory
     {
       return [
         'address' => $this->faker->address(),
+        'isActive' => 0,
       ];
     }
 }
