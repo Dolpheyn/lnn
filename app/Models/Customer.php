@@ -19,6 +19,10 @@ class Customer extends Model {
       'email',
   ];
 
+  public function getActiveAddressAttribute() {
+    return $this->addresses->where('isActive', 1)->first();
+  }
+
   public function addresses() {
     return $this->hasMany(Address::class, 'customerId');
   }
