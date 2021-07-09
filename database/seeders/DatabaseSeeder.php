@@ -21,6 +21,8 @@ class DatabaseSeeder extends Seeder
         SalesReportSeeder::class,
         FoodCategorySeeder::class,
         FoodSeeder::class,
+        OrderFoodSeeder::class,
+        CartSeeder::class,
       ]);
     }
 }
