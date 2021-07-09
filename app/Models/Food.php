@@ -48,4 +48,5 @@ class Food extends Model
       'id', // current model id attr
       'cartId', // related model id in pivot table
     );
+  }
 }
