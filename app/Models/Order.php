@@ -25,6 +25,10 @@ class Order extends Model {
     return $this->belongsTo(Deliverer::class, 'delivererId');
   }
 
+  public function payment() {
+    return $this->hasOne(Payment::class);
+  }
+
   function foods() {
     return $this->hasManyThrough(
       'App\Models\Food', // the related model
