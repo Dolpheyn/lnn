@@ -14,9 +14,9 @@ class CreateSalesReportOrdersTable extends Migration
     public function up()
     {
         Schema::create('sales_report_orders', function (Blueprint $table) {
-            $tale->string('salesReportId');
-            $tale->string('orderId');
-            $tale->unique(['orderId', 'salesReportId']);
+            $table->string('salesReportId');
+            $table->string('orderId');
+            $table->unique(['orderId', 'salesReportId']);
             $table->timestamps();
         });
     }
