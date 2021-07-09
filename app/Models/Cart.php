@@ -24,8 +24,14 @@ class Cart extends Model
     $total = 0;
 
     foreach($foods as $food) {
+      $quantity = $food->pivot->quantity;
+      $price = $food->price;
 
+      $total += $quantity * $price;
     }
+
+    $total += $this->deliveryFee;
+    return $total;
   }
 
   public function customer() {
