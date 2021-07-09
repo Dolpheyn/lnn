@@ -26,6 +26,10 @@ class Customer extends Model {
   public function orders() {
     return $this->hasMany(Order::class, 'customerId');
   }
+
+  public function cart() {
+    return $this->hasOne(Cart::class, 'customerId');
+  }
 }
 
 ?>
